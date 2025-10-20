@@ -1,0 +1,29 @@
+# ============================================================
+# Core PyTorch Stack
+# ============================================================
+torch
+torchvision
+torchaudio
+numpy
+protobuf
+
+# ============================================================
+# Hugging Face Ecosystem (aktualisiert für Gemma 3)
+# ============================================================
+transformers
+sentence-transformers
+accelerate
+tqdm
+huggingface-hub
+
+# ============================================================
+# Compatibility Stub (verhindert TF/Keras-Fehler)
+# ============================================================
+tf-keras==2.15.0
+
+# ============================================================
+# Optionale Tools für Auswertung / Plots
+# ============================================================
+pandas
+matplotlib
+scikit-learn

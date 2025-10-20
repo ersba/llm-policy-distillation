@@ -1,2 +1,4 @@
 models/saved_models/gemma-3-4b-it/*
 !models/saved_models/gemma-3-4b-it/.gitkeep
+.ipynb_checkpoints
+*/.ipynb_checkpoints/

@@ -3,21 +3,18 @@
 This project investigates how the decision-making behavior of a **Large Language Model (LLM)** can be **approximated** within a **Markov Decision Process (MDP)** framework.  
 The LLM receives structured states (e.g., traits and situational features) and outputs probabilistic action decisions.  
 A smaller, trainable model (e.g., logistic regression, MLP, Transformer) is trained to imitate this mapping, enabling efficient simulation of LLM-like agents in computational environments.
-
 ---
 
 ## Project Overview
 
-Formally, the LLM defines a conditional mapping:
-$$
-\pi_{\text{LLM}}: s \mapsto P(a \mid s)
-$$
+Formally, the LLM defines a conditional mapping: 
+
+$$\pi_{\text{LLM}}: s \mapsto P(a \mid s)$$
+
 where $s$ denotes the **state** (a combination of traits and contextual features), and $a$ denotes the **action** ("buys ice cream").  
 
 The objective is to train a lightweight **student model** $\pi_{\theta}$ to approximate:
-$$
-\pi_{\theta}(a \mid s) \approx \pi_{\text{LLM}}(a \mid s)
-$$
+$$\pi_{\theta}(a \mid s) \approx \pi_{\text{LLM}}(a \mid s)$$
 
 This enables low-cost decision-making while preserving the behavioral patterns of the teacher LLM.
 
@@ -61,9 +58,9 @@ This notebook ensures reproducible access to the same LLM version used in subseq
 
 - **Experimental Objective:**  
   Evaluate whether repeated runs of the same prompt produce stable numeric and semantic outputs:
-  $$
-  \pi_{\text{LLM}}^{(1)}(s) \approx \pi_{\text{LLM}}^{(2)}(s) \approx \ldots \approx \pi_{\text{LLM}}^{(N)}(s)
-  $$
+  
+  $$\pi_{\text{LLM}}^{(1)}(s) \approx \pi_{\text{LLM}}^{(2)}(s) \approx \ldots \approx \pi_{\text{LLM}}^{(N)}(s)$$
+  
   where differences arise only from random seeds and inherent sampling noise.
 
 - **Metrics:**
@@ -83,10 +80,9 @@ This notebook ensures reproducible access to the same LLM version used in subseq
 
 **Goal:** Generate a structured behavioral dataset representing LLM decisions over various trait–context combinations.
 
-- **Formal Mapping:**  
-  $$
-  (\text{traits}, \text{context}) \mapsto p_{\text{LLM}}(\text{buy ice cream})
-  $$
+- **Formal Mapping:**
+  
+  $$(\text{traits}, \text{context}) \mapsto p_{\text{LLM}}(\text{buy ice cream})$$
 
 - **Process:**
   1. Randomly sample valid combinations of traits and contexts.
@@ -121,7 +117,7 @@ Implemented architectures:
 | Decoder Transformer | GPT-like causal transformer with masking | Yes (causal) | Many |
 
 - **Loss Function:**  
-  $ \mathcal{L} = \frac{1}{N} \sum_n (\hat{y}_n - y_n)^2 $  
+  $\mathcal{L} = \frac{1}{N} \sum_n (\hat{y}_n - y_n)^2$  
   or binary cross-entropy for probabilistic outputs.
 
 - **Optimizer:** AdamW  
@@ -201,9 +197,9 @@ All notebooks are modular and can be executed independently.
 This project contributes to the emerging field of **LLM behavioral modeling**, demonstrating how probabilistic decision tendencies of large models can be replicated by compact architectures within an MDP framework.
 
 Mathematically, the aim is to minimize:
-$$
-\mathbb{E}_{s \sim \mathcal{D}} \left[ \left( \pi_{\theta}(a \mid s) - \pi_{\text{LLM}}(a \mid s) \right)^2 \right]
-$$
+
+$$\mathbb{E}_{s \sim \mathcal{D}} \left[ \left( \pi_{\theta}(a \mid s) - \pi_{\text{LLM}}(a \mid s) \right)^2 \right]$$
+
 where $\mathcal{D}$ is the distribution of behavioral contexts.
 
 Such approximations enable **interpretable**, **efficient**, and **simulation-compatible** agent models that reflect the statistical behavior of large foundation models.

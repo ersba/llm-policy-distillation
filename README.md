@@ -9,12 +9,14 @@ A smaller, trainable model (e.g., logistic regression, MLP, Transformer) is trai
 ## Project Overview
 
 Formally, the LLM defines a conditional mapping:
+
 $$
 \pi_{\text{LLM}}: s \mapsto P(a \mid s)
 $$
 where $s$ denotes the **state** (a combination of traits and contextual features), and $a$ denotes the **action** ("buys ice cream").  
 
 The objective is to train a lightweight **student model** $\pi_{\theta}$ to approximate:
+
 $$
 \pi_{\theta}(a \mid s) \approx \pi_{\text{LLM}}(a \mid s)
 $$
@@ -61,6 +63,7 @@ This notebook ensures reproducible access to the same LLM version used in subseq
 
 - **Experimental Objective:**  
   Evaluate whether repeated runs of the same prompt produce stable numeric and semantic outputs:
+
   $$
   \pi_{\text{LLM}}^{(1)}(s) \approx \pi_{\text{LLM}}^{(2)}(s) \approx \ldots \approx \pi_{\text{LLM}}^{(N)}(s)
   $$
@@ -83,7 +86,8 @@ This notebook ensures reproducible access to the same LLM version used in subseq
 
 **Goal:** Generate a structured behavioral dataset representing LLM decisions over various trait–context combinations.
 
-- **Formal Mapping:**  
+- **Formal Mapping:**
+
   $$
   (\text{traits}, \text{context}) \mapsto p_{\text{LLM}}(\text{buy ice cream})
   $$
@@ -201,6 +205,7 @@ All notebooks are modular and can be executed independently.
 This project contributes to the emerging field of **LLM behavioral modeling**, demonstrating how probabilistic decision tendencies of large models can be replicated by compact architectures within an MDP framework.
 
 Mathematically, the aim is to minimize:
+
 $$
 \mathbb{E}_{s \sim \mathcal{D}} \left[ \left( \pi_{\theta}(a \mid s) - \pi_{\text{LLM}}(a \mid s) \right)^2 \right]
 $$

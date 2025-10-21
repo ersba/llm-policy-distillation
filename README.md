@@ -1,8 +1,12 @@
-# Approximating LLM Decision-Making within a Markov Decision Process
+# Approximating LLM Decision-Making within a Markov Decision Process 
 
 This project investigates how the decision-making behavior of a **Large Language Model (LLM)** can be **approximated** within a **Markov Decision Process (MDP)** framework.  
 The LLM receives structured states (e.g., traits and situational features) and outputs probabilistic action decisions.  
 A smaller, trainable model (e.g., logistic regression, MLP, Transformer) is trained to imitate this mapping, enabling efficient simulation of LLM-like agents in computational environments.
+This project investigates how the decision-making behavior of a **Large Language Model (LLM)** can be **approximated** within a **Markov Decision Process (MDP)** framework.  
+The LLM receives structured states (e.g., traits and situational features) and outputs probabilistic action decisions.  
+A smaller, trainable model (e.g., logistic regression, MLP, Transformer) is trained to imitate this mapping, enabling efficient simulation of LLM-like agents in computational environments.
+
 ---
 
 ## Project Overview
@@ -45,6 +49,8 @@ This enables low-cost decision-making while preserving the behavioral patterns o
 ---
 
 ## Notebooks Overview
+
+Except for 01_gemma3_downloader-4b.ipynb, each Jupyter notebook contains detailed Markdown explanations of the methodology and the purpose behind each step.
 
 ### **01_gemma3_downloader-4b.ipynb**  
 **Purpose:** Downloads the Gemma-3-4B model and tokenizer from Hugging Face into a local directory.  

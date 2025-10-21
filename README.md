@@ -115,12 +115,12 @@ This notebook ensures reproducible access to the same LLM version used in subseq
 
 Implemented architectures:
 
-| Model | Description | Order Sensitivity | Parameters |
-|--------|--------------|-------------------|-------------|
-| Logistic Regression | Single-layer linear regression with sigmoid | No | Few |
-| Feedforward MLP | 2–4 hidden layers with ReLU activations | No | Medium |
-| Encoder Transformer | Transformer encoder with self-attention | Yes (global) | Many |
-| Decoder Transformer | GPT-like causal transformer with masking | Yes (causal) | Many |
+| Model | Description | 
+|--------|--------------|
+| Logistic Regression | Single-layer linear regression with sigmoid |
+| Feedforward MLP | 2–4 hidden layers with ReLU activations |
+| Encoder Transformer | Transformer encoder with self-attention | 
+| Decoder Transformer | GPT-like causal transformer with masking | 
 
 - **Loss Function:**  
   $\mathcal{L} = \frac{1}{N} \sum_n (\hat{y}_n - y_n)^2$  
